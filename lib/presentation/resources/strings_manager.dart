@@ -1,0 +1,25 @@
+class Strings {
+  static const String loginToYourAccount = "Login to your Account";
+  static const String email = "Email";
+  static const String password = "Password";
+  static const String forgetPassword = "Forgot Password";
+  static const String login = "Login";
+  static const String signUp = "Sign Up";
+  static const String orSignInWith = "Or sign in with";
+  static const String dontHaveAccount = "Don't have an account? ";
+  static const String createYourAccount = "Create your Account";
+  static const String confirmPassword = "Confirm Password";
+  static const String agreeWith = "Agree with ";
+  static const String termsConditions = "Terms & Conditions";
+  static const String alreadyHaveAccount = "Already have an account? ";
+  static const String orSignUpWith = "Or sign up with";
+  static const String forgetPasswordTitle = "Forget Password?";
+  static const String forgetPasswordSubtitle = "Please enter your email so we can send you a verification code.";
+  static const String sendResetCode = "Send Reset Code";
+  static const String verificationTitle = "Verification";
+  static const String verificationSubtitle = "We have send you a code to verify your email address.";
+  static const String continueButton = "Continue";
+  static const String resetPasswordTitle = "Reset Password";
+  static const String resetPasswordSubtitle = "Please enter your new password to continue.";
+  static const String confirm = "Confirm";
+}
