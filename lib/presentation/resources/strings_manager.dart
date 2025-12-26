@@ -14,12 +14,28 @@ class Strings {
   static const String alreadyHaveAccount = "Already have an account? ";
   static const String orSignUpWith = "Or sign up with";
   static const String forgetPasswordTitle = "Forget Password?";
-  static const String forgetPasswordSubtitle = "Please enter your email so we can send you a verification code.";
+  static const String forgetPasswordSubtitle =
+      "Please enter your email so we can send you a verification code.";
   static const String sendResetCode = "Send Reset Code";
   static const String verificationTitle = "Verification";
-  static const String verificationSubtitle = "We have send you a code to verify your email address.";
+  static const String verificationSubtitle =
+      "We have send you a code to verify your email address.";
   static const String continueButton = "Continue";
   static const String resetPasswordTitle = "Reset Password";
-  static const String resetPasswordSubtitle = "Please enter your new password to continue.";
+  static const String resetPasswordSubtitle =
+      "Please enter your new password to continue.";
   static const String confirm = "Confirm";
+  static const String home = "Home";
+  static const String appointments = "Appointments";
+  static const String chat = "Chat";
+  static const String profile = "Profile";
+  static const String specialties = "Specialties";
+  static const String seeAll = "See All";
+  static const String cardiology = "Cardiology";
+  static const String gynecology = "Gynecology";
+  static const String odontology = "Odontology";
+  static const String neurosurgery = "Neurosurgery";
+  static const String ophthalmology = "Ophthalmology";
+  static const String internalMedicine = "Internal Medicine";
+  static const String popularDoctors = "Popular Doctors";
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:medical_app/presentation/main/main_screen.dart';
 import 'package:medical_app/presentation/resources/assets_manager.dart';
 import 'package:medical_app/presentation/resources/color_manager.dart';
 import 'package:medical_app/presentation/resources/font_manager.dart';
@@ -13,7 +15,8 @@ import 'package:medical_app/presentation/widgets/password_field.dart';
 
 class ResetPasswordViewBody extends StatelessWidget {
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
   ResetPasswordViewBody({super.key});
 
@@ -62,7 +65,7 @@ class ResetPasswordViewBody extends StatelessWidget {
               radius: AppSize.s12.r,
               text: Strings.confirm,
               onTap: () {
-                // Implement reset password logic
+                context.go(MainScreen.mainRoute);
               },
             ),
           ],

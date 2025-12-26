@@ -4,8 +4,13 @@ import 'package:medical_app/app/functions.dart';
 import 'package:medical_app/presentation/auth/login/login_screen.dart';
 import 'package:medical_app/presentation/auth/register/register_screen.dart';
 import 'package:medical_app/presentation/auth/forgot_password/forget_password_screen.dart';
+import 'package:medical_app/presentation/main/appointments/appointments_screen.dart';
+import 'package:medical_app/presentation/main/chat/chat_screen.dart';
+import 'package:medical_app/presentation/main/home/home_screen.dart';
+import 'package:medical_app/presentation/main/main_screen.dart';
+import 'package:medical_app/presentation/main/profile/profile_screen.dart';
+import 'package:medical_app/presentation/reset_password/reset_password_screen.dart';
 import 'package:medical_app/presentation/verify/verify_screen.dart';
-import 'package:medical_app/presentation/verify/reset_password/reset_password_screen.dart';
 import 'package:medical_app/presentation/splash_screen.dart';
 
 class GoRouterConfig {
@@ -36,6 +41,26 @@ class GoRouterConfig {
       GoRoute(
         path: ResetPasswordScreen.resetPasswordRoute,
         builder: (context, state) => const ResetPasswordScreen(),
+      ),
+      GoRoute(
+        path: MainScreen.mainRoute,
+        builder: (context, state) => const MainScreen(),
+      ),
+      GoRoute(
+        path: ChatScreen.chatRoute,
+        builder: (context, state) => const ChatScreen(),
+      ),
+      GoRoute(
+        path: ProfileScreen.profileRoute,
+        builder: (context, state) => const ProfileScreen(),
+      ),
+      GoRoute(
+        path: AppointmentsScreen.appointmentsRoute,
+        builder: (context, state) => const AppointmentsScreen(),
+      ),
+      GoRoute(
+        path: HomeScreen.homeRoute,
+        builder: (context, state) => const HomeScreen(),
       ),
     ],
   );

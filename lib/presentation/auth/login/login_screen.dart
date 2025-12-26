@@ -9,6 +9,7 @@ import 'package:medical_app/presentation/auth/login/widgets/login_header_section
 import 'package:medical_app/presentation/auth/login/widgets/sign_up_prompt_section.dart';
 import 'package:medical_app/presentation/auth/login/widgets/social_sign_in_section.dart';
 import 'package:medical_app/presentation/auth/register/register_screen.dart';
+import 'package:medical_app/presentation/main/main_screen.dart';
 import 'package:medical_app/presentation/resources/color_manager.dart';
 import 'package:medical_app/presentation/resources/values_manager.dart';
 
@@ -40,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void _handleLogin() {
-    // TODO: Implement login logic
+    context.go(MainScreen.mainRoute);
   }
 
   void _handleForgetPassword() {
