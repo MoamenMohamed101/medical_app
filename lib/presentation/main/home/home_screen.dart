@@ -4,7 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medical_app/presentation/main/home/models/doctor_model.dart';
 import 'package:medical_app/presentation/main/home/models/specialty_model.dart';
-import 'package:medical_app/presentation/main/home/widgets/specialties_screen.dart';
+import 'package:medical_app/presentation/main/home/screens/specialties_screen.dart';
 import 'package:medical_app/presentation/main/home/widgets/appointment_card.dart';
 import 'package:medical_app/presentation/main/home/widgets/doctor_card.dart';
 import 'package:medical_app/presentation/main/home/widgets/home_app_bar.dart';

@@ -44,4 +44,5 @@ class Strings {
   static const String bookNow = "Book Now";
   static const String orthopedics = "Orthopedics";
   static const String pediatrics = "Pediatrics";
+  static const String notification = "Notification";
 }

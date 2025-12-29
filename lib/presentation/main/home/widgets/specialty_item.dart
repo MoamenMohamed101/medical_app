@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medical_app/presentation/main/home/models/specialty_model.dart';
-import 'package:medical_app/presentation/main/home/widgets/special_screen.dart';
+import 'package:medical_app/presentation/main/home/screens/special_screen.dart';
 import 'package:medical_app/presentation/resources/color_manager.dart';
 import 'package:medical_app/presentation/resources/values_manager.dart';
 

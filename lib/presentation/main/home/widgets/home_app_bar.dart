@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:medical_app/presentation/main/home/screens/notifications_screen.dart';
 import 'package:medical_app/presentation/resources/assets_manager.dart';
 import 'package:medical_app/presentation/resources/color_manager.dart';
 import 'package:medical_app/presentation/resources/font_manager.dart';
@@ -46,10 +48,13 @@ class HomeAppBar extends StatelessWidget {
             ),
           ],
         ),
-        CircleAvatar(
-          radius: AppSize.s20.r,
-          backgroundColor: ColorManager.errorColor,
-          child: SvgPicture.asset(ImageAssets.notification),
+        InkWell(
+          onTap: () => context.push(NotificationsScreen.notificationRoute),
+          child: CircleAvatar(
+            radius: AppSize.s20.r,
+            backgroundColor: ColorManager.errorColor,
+            child: SvgPicture.asset(ImageAssets.notification),
+          ),
         ),
       ],
     );
