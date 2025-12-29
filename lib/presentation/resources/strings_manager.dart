@@ -38,4 +38,10 @@ class Strings {
   static const String ophthalmology = "Ophthalmology";
   static const String internalMedicine = "Internal Medicine";
   static const String popularDoctors = "Popular Doctors";
+  static const String seeMore = "See More";
+  static const String welcomeBack = "Welcome Back";
+  static const String searchHint = "Search....";
+  static const String bookNow = "Book Now";
+  static const String orthopedics = "Orthopedics";
+  static const String pediatrics = "Pediatrics";
 }

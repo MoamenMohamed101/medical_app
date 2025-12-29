@@ -21,7 +21,7 @@ class VerifyInputField extends StatelessWidget {
         borderColor: ColorManager.primaryColor,
         showFieldAsBox: true,
         disabledBorderColor: ColorManager.primaryColor,
-        fieldWidth: AppSize.s60.h,
+        fieldWidth: AppSize.s50.w,
         fieldHeight: AppSize.s60.h,
         filled: true,
         fillColor: ColorManager.whiteColor,

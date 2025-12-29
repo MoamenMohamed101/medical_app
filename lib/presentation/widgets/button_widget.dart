@@ -10,6 +10,7 @@ class ButtonWidget extends StatelessWidget {
   final void Function()? onTap;
   final Color color;
   final Color textColor;
+  final bool isSmallButton;
 
   const ButtonWidget({
     super.key,
@@ -20,6 +21,7 @@ class ButtonWidget extends StatelessWidget {
     required this.text,
     this.onTap,
     this.textColor = ColorManager.whiteColor,
+    this.isSmallButton = false,
   });
 
   @override
@@ -43,10 +45,15 @@ class ButtonWidget extends StatelessWidget {
         child: Center(
           child: Text(
             text,
-            style: getMediumTextStyle(
-              color: textColor,
-              fontSize: AppSize.s18.sp,
-            ),
+            style: isSmallButton
+                ? getRegularTextStyle(
+                    color: textColor,
+                    fontSize: AppSize.s12.sp,
+                  )
+                : getMediumTextStyle(
+                    color: textColor,
+                    fontSize: AppSize.s18.sp,
+                  ),
           ),
         ),
       ),
