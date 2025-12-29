@@ -14,47 +14,44 @@ class HomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: AppPadding.p16.w),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Container(
-              //   width: AppSize.s50.w,
-              //   height: AppSize.s50.h,
-              //   decoration: const BoxDecoration(
-              //     shape: BoxShape.circle,
-              //     color: ColorManager.lightGrey,
-              //   ),
-              // ),
-              // SizedBox(width: AppSize.s12.w),
-              Text(
-                'Hi, Marlin',
-                style: getMediumTextStyle(
-                  color: ColorManager.textColor,
-                  fontSize: FontSizeManager.s16.sp,
-                ),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Container(
+            //   width: AppSize.s50.w,
+            //   height: AppSize.s50.h,
+            //   decoration: const BoxDecoration(
+            //     shape: BoxShape.circle,
+            //     color: ColorManager.lightGrey,
+            //   ),
+            // ),
+            // SizedBox(width: AppSize.s12.w),
+            Text(
+              'Hi, Marlin',
+              style: getMediumTextStyle(
+                color: ColorManager.textColor,
+                fontSize: FontSizeManager.s16.sp,
               ),
-              Gap(AppSize.s4.h),
-              Text(
-                Strings.welcomeBack,
-                style: getRegularTextStyle(
-                  color: ColorManager.greyColor,
-                  fontSize: FontSizeManager.s12.sp,
-                ),
+            ),
+            Gap(AppSize.s4.h),
+            Text(
+              Strings.welcomeBack,
+              style: getRegularTextStyle(
+                color: ColorManager.greyColor,
+                fontSize: FontSizeManager.s12.sp,
               ),
-            ],
-          ),
-          CircleAvatar(
-            radius: AppSize.s20.r,
-            backgroundColor: ColorManager.errorColor,
-            child: SvgPicture.asset(ImageAssets.notification),
-          ),
-        ],
-      ),
+            ),
+          ],
+        ),
+        CircleAvatar(
+          radius: AppSize.s20.r,
+          backgroundColor: ColorManager.errorColor,
+          child: SvgPicture.asset(ImageAssets.notification),
+        ),
+      ],
     );
   }
 }

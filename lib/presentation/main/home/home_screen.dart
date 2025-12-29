@@ -72,77 +72,78 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: ColorManager.whiteColor,
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Gap(AppSize.s10.h),
-              const HomeAppBar(),
-              Gap(AppSize.s16.h),
-              const HomeSearchBar(),
-              Gap(AppSize.s16.h),
-              AppointmentCard(
-                doctor: DoctorModel(
-                  name: 'Dr. Daniel Rodriguez',
-                  image:
-                      'https://img.freepik.com/free-photo/portrait-successful-man-having-stubble-posing-with-broad-smile-keeping-arms-folded_171337-1267.jpg',
-                  specialty: 'Interventional Cardiologist',
-                  rating: 0,
-                  reviews: 0,
-                  availability: '',
-                ),
-                date: DateTime.now(),
-              ),
-              Gap(AppSize.s16.h),
-
-              SectionHeader(
-                title: Strings.specialties,
-                onSeeAll: () {
-                  context.push(SpecialtiesScreen.specialtiesRoute);
-                },
-                hasSeeAllButton: true,
-              ),
-              SizedBox(
-                child: GridView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: specialties.length,
-                  padding: EdgeInsets.symmetric(horizontal: AppPadding.p16.w),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    crossAxisSpacing: AppSize.s12.w,
-                    mainAxisSpacing: AppSize.s12.w,
-                    childAspectRatio: 1.0,
+          child: Padding(
+            padding: EdgeInsetsDirectional.symmetric(
+              horizontal: AppPadding.p16.w,
+            ),
+            child: Column(
+              children: [
+                Gap(AppSize.s10.h),
+                const HomeAppBar(),
+                Gap(AppSize.s16.h),
+                const HomeSearchBar(),
+                Gap(AppSize.s16.h),
+                AppointmentCard(
+                  doctor: DoctorModel(
+                    name: 'Dr. Daniel Rodriguez',
+                    image:
+                        'https://img.freepik.com/free-photo/portrait-successful-man-having-stubble-posing-with-broad-smile-keeping-arms-folded_171337-1267.jpg',
+                    specialty: 'Interventional Cardiologist',
+                    rating: 0,
+                    reviews: 0,
+                    availability: '',
                   ),
-                  itemBuilder: (context, index) {
-                    return SpecialtyItem(
-                      specialty: specialties[index],
-                      iconHieght: AppSize.s40.h,
-                      iconWidth: AppSize.s40.w,
-                      textStyle: getRegularTextStyle(
-                        color: ColorManager.primaryColor,
-                        fontSize: FontSizeManager.s12.sp,
-                      ),
-                    );
-                  },
+                  date: DateTime.now(),
                 ),
-              ),
-              Gap(AppSize.s12.h),
-              SectionHeader(title: Strings.popularDoctors),
-              SizedBox(
-                height: AppSize.s150.h,
-                child: ListView.separated(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: doctors.length,
-                  separatorBuilder: (context, index) => Gap(AppSize.s12.w),
-                  itemBuilder: (context, index) {
-                    return SizedBox(
-                      width: 360.w,
-                      child: DoctorCard(doctor: doctors[index]),
-                    );
+                Gap(AppSize.s16.h),
+
+                SectionHeader(
+                  title: Strings.specialties,
+                  onSeeAll: () {
+                    context.push(SpecialtiesScreen.specialtiesRoute);
                   },
+                  hasSeeAllButton: true,
                 ),
-              ),
-              Gap(AppSize.s20.h),
-            ],
+                SizedBox(
+                  child: GridView.builder(
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: specialties.length,
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      crossAxisSpacing: AppSize.s12.w,
+                      mainAxisSpacing: AppSize.s12.w,
+                      childAspectRatio: 1.0,
+                    ),
+                    itemBuilder: (context, index) {
+                      return SpecialtyItem(
+                        specialty: specialties[index],
+                        iconHieght: AppSize.s40.h,
+                        iconWidth: AppSize.s40.w,
+                        textStyle: getRegularTextStyle(
+                          color: ColorManager.primaryColor,
+                          fontSize: FontSizeManager.s12.sp,
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                Gap(AppSize.s12.h),
+                SectionHeader(title: Strings.popularDoctors),
+                SizedBox(
+                  height: AppSize.s150.h,
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: doctors.length,
+                    separatorBuilder: (context, index) => Gap(AppSize.s12.w),
+                    itemBuilder: (context, index) {
+                      return DoctorCard(doctor: doctors[index]);
+                    },
+                  ),
+                ),
+                Gap(AppSize.s20.h),
+              ],
+            ),
           ),
         ),
       ),

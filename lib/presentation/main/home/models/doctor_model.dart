@@ -5,6 +5,7 @@ class DoctorModel {
   final double rating;
   final int reviews;
   final String availability;
+  final double price;
 
   DoctorModel({
     required this.name,
@@ -13,5 +14,6 @@ class DoctorModel {
     required this.rating,
     required this.reviews,
     required this.availability,
+    this.price = 0,
   });
 }

@@ -7,6 +7,7 @@ import 'package:medical_app/presentation/auth/forgot_password/forget_password_sc
 import 'package:medical_app/presentation/main/appointments/appointments_screen.dart';
 import 'package:medical_app/presentation/main/chat/chat_screen.dart';
 import 'package:medical_app/presentation/main/home/home_screen.dart';
+import 'package:medical_app/presentation/main/home/widgets/special_screen.dart';
 import 'package:medical_app/presentation/main/home/widgets/specialties_screen.dart';
 import 'package:medical_app/presentation/main/main_screen.dart';
 import 'package:medical_app/presentation/main/profile/profile_screen.dart';
@@ -66,6 +67,11 @@ class GoRouterConfig {
       GoRoute(
         path: SpecialtiesScreen.specialtiesRoute,
         builder: (context, state) => const SpecialtiesScreen(),
+      ),
+      GoRoute(
+        path: SpecialScreen.specialRoute,
+        builder: (context, state) =>
+            SpecialScreen(specialName: state.extra as String),
       ),
     ],
   );

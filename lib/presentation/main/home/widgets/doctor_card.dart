@@ -12,39 +12,44 @@ import 'package:medical_app/presentation/widgets/button_widget.dart';
 class DoctorCard extends StatelessWidget {
   final DoctorModel doctor;
 
-  const DoctorCard({super.key, required this.doctor});
+  final bool showPrice;
+  final double? width;
+
+  const DoctorCard({
+    super.key,
+    required this.doctor,
+    this.showPrice = false,
+    this.width,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: AppPadding.p16.w,
-        vertical: AppPadding.p8.h,
+    return Container(
+      width: width ?? MediaQuery.of(context).size.width * 0.75,
+      padding: EdgeInsets.all(AppPadding.p10.w),
+      decoration: BoxDecoration(
+        color: ColorManager.whiteColor,
+        borderRadius: BorderRadius.circular(AppSize.s12.r),
+        boxShadow: [
+          BoxShadow(
+            color: ColorManager.lightGrey.withOpacity(0.5),
+            spreadRadius: 1,
+            blurRadius: 5,
+            offset: const Offset(0, 3),
+          ),
+        ],
       ),
-      child: Container(
-        padding: EdgeInsets.all(AppPadding.p10.w),
-        decoration: BoxDecoration(
-          color: ColorManager.whiteColor,
-          borderRadius: BorderRadius.circular(AppSize.s12.r),
-          boxShadow: [
-            BoxShadow(
-              color: ColorManager.lightGrey.withOpacity(0.5),
-              spreadRadius: 1,
-              blurRadius: 5,
-              offset: const Offset(0, 3),
-            ),
-          ],
-        ),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                CircleAvatar(
-                  radius: AppSize.s30.r,
-                  backgroundImage: NetworkImage(doctor.image),
-                ),
-                Gap(AppSize.s8.h),
-                Column(
+      child: Column(
+        children: [
+          Row(
+            children: [
+              CircleAvatar(
+                radius: AppSize.s30.r,
+                backgroundImage: NetworkImage(doctor.image),
+              ),
+              Gap(AppSize.s8.h),
+              Expanded(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
@@ -78,38 +83,46 @@ class DoctorCard extends StatelessWidget {
                     ),
                   ],
                 ),
-              ],
-            ),
-            Gap(AppSize.s8.h),
-            Row(
-              children: [
-                CircleAvatar(
-                  backgroundColor: Color(0xff00E908),
-                  radius: AppSize.s5.r,
-                ),
-                Gap(AppSize.s8.w),
+              ),
+              if (showPrice)
                 Text(
-                  doctor.availability,
-                  style: getRegularTextStyle(
-                    color: ColorManager.greyColor,
-                    fontSize: FontSizeManager.s12.sp,
+                  '\$${doctor.price.toInt()}',
+                  style: getBoldTextStyle(
+                    color: ColorManager.primaryColor,
+                    fontSize: FontSizeManager.s18.sp,
                   ),
                 ),
-                Spacer(),
-                ButtonWidget(
-                  radius: AppSize.s8.r,
-                  width: AppSize.s80.w,
-                  height: AppSize.s28.h,
-                  text: Strings.bookNow,
-                  color: ColorManager.primaryColor,
-                  textColor: ColorManager.whiteColor,
-                  onTap: () {},
-                  isSmallButton: true,
+            ],
+          ),
+          Gap(AppSize.s8.h),
+          Row(
+            children: [
+              CircleAvatar(
+                backgroundColor: Color(0xff00E908),
+                radius: AppSize.s5.r,
+              ),
+              Gap(AppSize.s8.w),
+              Text(
+                doctor.availability,
+                style: getRegularTextStyle(
+                  color: ColorManager.greyColor,
+                  fontSize: FontSizeManager.s12.sp,
                 ),
-              ],
-            ),
-          ],
-        ),
+              ),
+              Spacer(),
+              ButtonWidget(
+                radius: AppSize.s8.r,
+                width: AppSize.s80.w,
+                height: AppSize.s28.h,
+                text: Strings.bookNow,
+                color: ColorManager.primaryColor,
+                textColor: ColorManager.whiteColor,
+                onTap: () {},
+                isSmallButton: true,
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
