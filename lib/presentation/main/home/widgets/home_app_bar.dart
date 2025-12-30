@@ -32,7 +32,7 @@ class HomeAppBar extends StatelessWidget {
             // ),
             // SizedBox(width: AppSize.s12.w),
             Text(
-              'Hi, Marlin',
+              '${Strings.hi}, Marlin',
               style: getMediumTextStyle(
                 color: ColorManager.textColor,
                 fontSize: FontSizeManager.s16.sp,
@@ -52,7 +52,7 @@ class HomeAppBar extends StatelessWidget {
           onTap: () => context.push(NotificationsScreen.notificationRoute),
           child: CircleAvatar(
             radius: AppSize.s20.r,
-            backgroundColor: ColorManager.errorColor,
+            backgroundColor: ColorManager.babyBlue.withValues(alpha: 0.03),
             child: SvgPicture.asset(ImageAssets.notification),
           ),
         ),

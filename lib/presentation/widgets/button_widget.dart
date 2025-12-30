@@ -11,6 +11,7 @@ class ButtonWidget extends StatelessWidget {
   final Color color;
   final Color textColor;
   final bool isSmallButton;
+  final Color borderColor;
 
   const ButtonWidget({
     super.key,
@@ -22,6 +23,7 @@ class ButtonWidget extends StatelessWidget {
     this.onTap,
     this.textColor = ColorManager.whiteColor,
     this.isSmallButton = false,
+    this.borderColor = Colors.transparent,
   });
 
   @override
@@ -37,10 +39,7 @@ class ButtonWidget extends StatelessWidget {
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(radius.r),
-          // border: Border.all(
-          //   color: ColorManager.formFieldsBorderColor,
-          //   width: AppSize.s1.w,
-          // ),
+          border: Border.all(color: borderColor, width: AppSize.s1.w),
         ),
         child: Center(
           child: Text(

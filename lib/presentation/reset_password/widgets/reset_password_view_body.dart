@@ -52,12 +52,12 @@ class ResetPasswordViewBody extends StatelessWidget {
             ),
             Gap(AppSize.s40.h),
             PasswordField(
-              controller: passwordController,
+              passwordController: passwordController,
               hintText: Strings.password,
             ),
             Gap(AppSize.s25.h),
             PasswordField(
-              controller: confirmPasswordController,
+              passwordController: confirmPasswordController,
               hintText: Strings.confirmPassword,
             ),
             Gap(AppSize.s40.h),

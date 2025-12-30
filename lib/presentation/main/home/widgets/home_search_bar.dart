@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gap/gap.dart';
+
 import 'package:medical_app/presentation/resources/color_manager.dart';
 import 'package:medical_app/presentation/resources/font_manager.dart';
 import 'package:medical_app/presentation/resources/strings_manager.dart';
@@ -8,7 +8,20 @@ import 'package:medical_app/presentation/resources/styles_manager.dart';
 import 'package:medical_app/presentation/resources/values_manager.dart';
 
 class HomeSearchBar extends StatelessWidget {
-  const HomeSearchBar({super.key});
+  final VoidCallback? onTap;
+  final bool readOnly;
+  final TextEditingController? controller;
+  final Function(String)? onChanged;
+  final bool autoFocus;
+
+  const HomeSearchBar({
+    super.key,
+    this.onTap,
+    this.readOnly = false,
+    this.controller,
+    this.onChanged,
+    this.autoFocus = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,24 +32,28 @@ class HomeSearchBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppSize.s12.r),
         border: Border.all(color: ColorManager.lightGrey),
       ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: AppPadding.p16.w),
-        child: Row(
-          children: [
-            const Icon(Icons.search, color: ColorManager.greyColor),
-            Gap(AppSize.s12.w),
-            Expanded(
-              child: Text(
-                Strings.searchHint,
-                style: getRegularTextStyle(
-                  color: ColorManager.greyColor,
-                  fontSize: FontSizeManager.s14.sp,
-                ),
-              ),
-            ),
-            const Icon(Icons.mic, color: ColorManager.greyColor),
-          ],
+      child: TextFormField(
+        controller: controller,
+        onTap: onTap,
+        readOnly: readOnly,
+        onChanged: onChanged,
+        autofocus: autoFocus,
+        style: getRegularTextStyle(
+          color: ColorManager.textColor,
+          fontSize: FontSizeManager.s14.sp,
         ),
+        decoration: InputDecoration(
+          hintText: Strings.searchHint,
+          hintStyle: getRegularTextStyle(
+            color: ColorManager.greyColor,
+            fontSize: FontSizeManager.s14.sp,
+          ),
+          prefixIcon: const Icon(Icons.search, color: ColorManager.greyColor),
+          suffixIcon: const Icon(Icons.mic, color: ColorManager.greyColor),
+          border: InputBorder.none,
+          contentPadding: EdgeInsets.only(top: AppPadding.p12.h),
+        ),
+        cursorColor: ColorManager.primaryColor,
       ),
     );
   }

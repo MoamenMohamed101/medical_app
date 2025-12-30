@@ -28,16 +28,8 @@ class SpecialtyItem extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          color: ColorManager.whiteColor,
+          color: ColorManager.babyBlue.withValues(alpha: 0.03),
           borderRadius: BorderRadius.circular(AppSize.s12.r),
-          boxShadow: [
-            BoxShadow(
-              color: ColorManager.lightGrey.withValues(alpha: 0.5),
-              spreadRadius: 1,
-              blurRadius: 5,
-              offset: const Offset(0, 3),
-            ),
-          ],
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

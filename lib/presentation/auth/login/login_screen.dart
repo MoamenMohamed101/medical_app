@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/presentation/auth/forgot_password/forget_password_screen.dart';
-
+import 'package:medical_app/presentation/forgot_password/forget_password_screen.dart';
 import 'package:medical_app/presentation/auth/login/widgets/login_form_section.dart';
 import 'package:medical_app/presentation/auth/login/widgets/login_header_section.dart';
 import 'package:medical_app/presentation/auth/login/widgets/sign_up_prompt_section.dart';
@@ -13,38 +12,18 @@ import 'package:medical_app/presentation/main/main_screen.dart';
 import 'package:medical_app/presentation/resources/color_manager.dart';
 import 'package:medical_app/presentation/resources/values_manager.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends StatelessWidget {
   static const String loginRoute = '/login';
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
-  const LoginScreen({super.key});
+  LoginScreen({super.key});
 
-  @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends State<LoginScreen> {
-  late final TextEditingController _emailController;
-  late final TextEditingController _passwordController;
-
-  @override
-  void initState() {
-    super.initState();
-    _emailController = TextEditingController();
-    _passwordController = TextEditingController();
-  }
-
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
-    super.dispose();
-  }
-
-  void _handleLogin() {
+  void _handleLogin(BuildContext context) {
     context.go(MainScreen.mainRoute);
   }
 
-  void _handleForgetPassword() {
+  void _handleForgetPassword(BuildContext context) {
     context.push(ForgetPasswordScreen.forgotPasswordRoute);
   }
 
@@ -56,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
     // TODO: Implement Facebook sign in
   }
 
-  void _handleSignUp() {
+  void _handleSignUp(BuildContext context) {
     context.go(RegisterScreen.registerRoute);
   }
 
@@ -75,10 +54,10 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 const LoginHeaderSection(),
                 LoginFormSection(
-                  emailController: _emailController,
-                  passwordController: _passwordController,
-                  onForgetPassword: _handleForgetPassword,
-                  onLogin: _handleLogin,
+                  onForgetPassword: () => _handleForgetPassword(context),
+                  onLogin: () => _handleLogin(context),
+                  emailController: emailController,
+                  passwordController: passwordController,
                 ),
                 Gap(AppSize.s40.h),
                 SocialSignInSection(
@@ -86,7 +65,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   onFacebookSignIn: _handleFacebookSignIn,
                 ),
                 Gap(AppSize.s25.h),
-                SignUpPromptSection(onSignUp: _handleSignUp),
+                SignUpPromptSection(onSignUp: () => _handleSignUp(context)),
               ],
             ),
           ),

@@ -3,13 +3,18 @@ import 'package:go_router/go_router.dart';
 import 'package:medical_app/app/functions.dart';
 import 'package:medical_app/presentation/auth/login/login_screen.dart';
 import 'package:medical_app/presentation/auth/register/register_screen.dart';
-import 'package:medical_app/presentation/auth/forgot_password/forget_password_screen.dart';
+import 'package:medical_app/presentation/forgot_password/forget_password_screen.dart';
 import 'package:medical_app/presentation/main/appointments/appointments_screen.dart';
 import 'package:medical_app/presentation/main/chat/chat_screen.dart';
 import 'package:medical_app/presentation/main/home/home_screen.dart';
 import 'package:medical_app/presentation/main/home/screens/notifications_screen.dart';
 import 'package:medical_app/presentation/main/home/screens/special_screen.dart';
 import 'package:medical_app/presentation/main/home/screens/specialties_screen.dart';
+import 'package:medical_app/presentation/main/home/screens/search_screen.dart';
+import 'package:medical_app/presentation/main/home/screens/doctor_details_screen.dart';
+import 'package:medical_app/presentation/main/home/models/doctor_model.dart';
+import 'package:medical_app/presentation/main/home/screens/book_appointment_screen.dart';
+import 'package:medical_app/presentation/main/home/screens/appointment_confirmed_screen.dart';
 import 'package:medical_app/presentation/main/main_screen.dart';
 import 'package:medical_app/presentation/main/profile/profile_screen.dart';
 import 'package:medical_app/presentation/reset_password/reset_password_screen.dart';
@@ -31,7 +36,7 @@ class GoRouterConfig {
       ),
       GoRoute(
         path: RegisterScreen.registerRoute,
-        builder: (context, state) => const RegisterScreen(),
+        builder: (context, state) => RegisterScreen(),
       ),
       GoRoute(
         path: ForgetPasswordScreen.forgotPasswordRoute,
@@ -77,6 +82,25 @@ class GoRouterConfig {
       GoRoute(
         path: NotificationsScreen.notificationRoute,
         builder: (context, state) => const NotificationsScreen(),
+      ),
+      GoRoute(
+        path: SearchScreen.searchRoute,
+        builder: (context, state) => const SearchScreen(),
+      ),
+      GoRoute(
+        path: DoctorDetailsScreen.doctorDetailsRoute,
+        builder: (context, state) =>
+            DoctorDetailsScreen(doctor: state.extra as DoctorModel),
+      ),
+      GoRoute(
+        path: BookAppointmentScreen.bookAppointmentRoute,
+        builder: (context, state) =>
+            BookAppointmentScreen(doctor: state.extra as DoctorModel),
+      ),
+      GoRoute(
+        path: AppointmentConfirmedScreen.appointmentConfirmedRoute,
+        builder: (context, state) =>
+            AppointmentConfirmedScreen(doctor: state.extra as DoctorModel),
       ),
     ],
   );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medical_app/presentation/auth/forgot_password/widgets/forget_password_view_body.dart';
+import 'package:medical_app/presentation/forgot_password/widgets/forget_password_view_body.dart';
 import 'package:medical_app/presentation/resources/color_manager.dart';
 import 'package:medical_app/presentation/widgets/custom_app_bar.dart';
 

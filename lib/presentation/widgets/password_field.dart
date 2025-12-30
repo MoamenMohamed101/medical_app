@@ -3,12 +3,12 @@ import 'package:medical_app/presentation/widgets/text_form_field_widget.dart';
 import 'package:flutter/material.dart';
 
 class PasswordField extends StatelessWidget {
-  final TextEditingController controller;
+  final TextEditingController passwordController;
   final String hintText;
 
   const PasswordField({
     super.key,
-    required this.controller,
+    required this.passwordController,
     required this.hintText,
   });
 
@@ -16,7 +16,7 @@ class PasswordField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFromFieldWidget(
       hintText: hintText,
-      controller: controller,
+      controller: passwordController,
       obscureText: true,
       keyboardType: TextInputType.visiblePassword,
       textInputAction: TextInputAction.done,

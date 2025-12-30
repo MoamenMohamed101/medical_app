@@ -45,4 +45,24 @@ class Strings {
   static const String orthopedics = "Orthopedics";
   static const String pediatrics = "Pediatrics";
   static const String notification = "Notification";
+  static const String message = "Message";
+  static const String review = "Review";
+  static const String about = "About";
+  static const String day = "Day";
+  static const String time = "Time";
+  static const String reviews = "Reviews";
+  static const String seeMoreLowerCase = "see more";
+  static const String yourAppointment = "Your Appointment";
+  static const String patientName = "Patient Name";
+  static const String patientAge = "Patient Age";
+  static const String phoneNumber = "Phone Number";
+  static const String gender = "Gender";
+  static const String female = "Female";
+  static const String male = "Male";
+  static const String kid = "Kid";
+  static const String appointmentConfirmed = "Appointment Confirmed";
+  static const String edit = "Edit";
+  static const String cancel = "Cancel";
+  static const String backToHome = "Back to Home";
+  static const String hi = "Hi";
 }

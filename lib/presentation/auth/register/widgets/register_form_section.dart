@@ -46,12 +46,12 @@ class _RegisterFormSectionState extends State<RegisterFormSection> {
         EmailField(emailController: widget.emailController),
         Gap(AppSize.s25.h),
         PasswordField(
-          controller: widget.passwordController,
+          passwordController: widget.passwordController,
           hintText: Strings.password,
         ),
         Gap(AppSize.s25.h),
         PasswordField(
-          controller: widget.confirmPasswordController,
+          passwordController: widget.confirmPasswordController,
           hintText: Strings.confirmPassword,
         ),
         Gap(AppSize.s10.h),

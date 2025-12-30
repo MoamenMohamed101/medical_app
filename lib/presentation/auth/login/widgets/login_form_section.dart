@@ -32,7 +32,7 @@ class LoginFormSection extends StatelessWidget {
         EmailField(emailController: emailController),
         Gap(AppSize.s25.h),
         PasswordField(
-          controller: passwordController,
+          passwordController: passwordController,
           hintText: Strings.password,
         ),
         Gap(AppSize.s8.h),

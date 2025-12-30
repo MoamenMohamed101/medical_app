@@ -10,35 +10,14 @@ import 'package:medical_app/presentation/auth/register/widgets/social_sign_up_se
 import 'package:medical_app/presentation/resources/color_manager.dart';
 import 'package:medical_app/presentation/resources/values_manager.dart';
 
-class RegisterScreen extends StatefulWidget {
+class RegisterScreen extends StatelessWidget {
   static const String registerRoute = '/register';
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
 
-  const RegisterScreen({super.key});
-
-  @override
-  State<RegisterScreen> createState() => _RegisterScreenState();
-}
-
-class _RegisterScreenState extends State<RegisterScreen> {
-  late final TextEditingController _emailController;
-  late final TextEditingController _passwordController;
-  late final TextEditingController _confirmPasswordController;
-
-  @override
-  void initState() {
-    super.initState();
-    _emailController = TextEditingController();
-    _passwordController = TextEditingController();
-    _confirmPasswordController = TextEditingController();
-  }
-
-  @override
-  void dispose() {
-    _emailController.dispose();
-    _passwordController.dispose();
-    _confirmPasswordController.dispose();
-    super.dispose();
-  }
+  RegisterScreen({super.key});
 
   void _handleSignUp() {
     // TODO: Implement sign up logic
@@ -52,7 +31,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     // TODO: Implement Facebook sign in
   }
 
-  void _handleSignIn() {
+  void _handleSignIn(BuildContext context) {
     context.go(LoginScreen.loginRoute);
   }
 
@@ -71,10 +50,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
               children: [
                 const RegisterHeaderSection(),
                 RegisterFormSection(
-                  emailController: _emailController,
-                  passwordController: _passwordController,
-                  confirmPasswordController: _confirmPasswordController,
                   onSignUp: _handleSignUp,
+                  emailController: emailController,
+                  passwordController: passwordController,
+                  confirmPasswordController: confirmPasswordController,
                 ),
                 Gap(AppSize.s40.h),
                 SocialSignUpSection(
@@ -82,7 +61,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   onFacebookSignIn: _handleFacebookSignIn,
                 ),
                 Gap(AppSize.s25.h),
-                SignInPromptSection(onSignIn: _handleSignIn),
+                SignInPromptSection(onSignIn: () => _handleSignIn(context)),
               ],
             ),
           ),

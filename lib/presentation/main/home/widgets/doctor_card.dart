@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:medical_app/presentation/main/home/models/doctor_model.dart';
+import 'package:medical_app/presentation/main/home/screens/doctor_details_screen.dart';
 import 'package:medical_app/presentation/resources/color_manager.dart';
 import 'package:medical_app/presentation/resources/font_manager.dart';
 import 'package:medical_app/presentation/resources/strings_manager.dart';
@@ -28,16 +30,8 @@ class DoctorCard extends StatelessWidget {
       width: width ?? MediaQuery.of(context).size.width * 0.75,
       padding: EdgeInsets.all(AppPadding.p10.w),
       decoration: BoxDecoration(
-        color: ColorManager.whiteColor,
+        color: ColorManager.babyBlue.withValues(alpha: 0.03),
         borderRadius: BorderRadius.circular(AppSize.s12.r),
-        boxShadow: [
-          BoxShadow(
-            color: ColorManager.lightGrey.withOpacity(0.5),
-            spreadRadius: 1,
-            blurRadius: 5,
-            offset: const Offset(0, 3),
-          ),
-        ],
       ),
       child: Column(
         children: [
@@ -117,7 +111,12 @@ class DoctorCard extends StatelessWidget {
                 text: Strings.bookNow,
                 color: ColorManager.primaryColor,
                 textColor: ColorManager.whiteColor,
-                onTap: () {},
+                onTap: () {
+                  context.push(
+                    DoctorDetailsScreen.doctorDetailsRoute,
+                    extra: doctor,
+                  );
+                },
                 isSmallButton: true,
               ),
             ],
