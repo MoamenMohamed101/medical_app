@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:medical_app/presentation/main/profile/screens/edit_information_screen.dart';
 import 'package:medical_app/presentation/resources/color_manager.dart';
 import 'package:medical_app/presentation/resources/font_manager.dart';
 import 'package:medical_app/presentation/resources/strings_manager.dart';
@@ -21,7 +23,7 @@ class ProfileScreen extends StatelessWidget {
         padding: EdgeInsets.all(AppPadding.p16.w),
         child: Column(
           children: [
-            _buildProfileHeader(),
+            _buildProfileHeader(context),
             Gap(AppSize.s30.h),
             _buildMenuItem(title: Strings.paymentMethod),
             _buildMenuItem(title: Strings.notificationSetting),
@@ -36,7 +38,7 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildProfileHeader() {
+  Widget _buildProfileHeader(BuildContext context) {
     return Row(
       children: [
         CircleAvatar(
@@ -77,7 +79,7 @@ class ProfileScreen extends StatelessWidget {
         ),
         TextButton(
           onPressed: () {
-            // Handle edit profile
+            context.push(EditInformationScreen.editInformationRoute);
           },
           child: Text(
             Strings.edit,

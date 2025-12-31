@@ -85,4 +85,8 @@ class Strings {
   static const String helpCenter = "Help Center";
   static const String deleteAccount = "Delete Account";
   static const String logout = "Logout";
+  static const String editInformation = "Edit Information";
+  static const String updateProfile = "Update Profile";
+  static const String selectDate = "Select Date";
+  static const String selected = "Selected";
 }

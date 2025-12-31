@@ -17,6 +17,7 @@ import 'package:medical_app/presentation/main/home/screens/book_appointment_scre
 import 'package:medical_app/presentation/main/home/screens/appointment_confirmed_screen.dart';
 import 'package:medical_app/presentation/main/main_screen.dart';
 import 'package:medical_app/presentation/main/profile/profile_screen.dart';
+import 'package:medical_app/presentation/main/profile/screens/edit_information_screen.dart';
 import 'package:medical_app/presentation/reset_password/reset_password_screen.dart';
 import 'package:medical_app/presentation/verify/verify_screen.dart';
 import 'package:medical_app/presentation/splash_screen.dart';
@@ -101,6 +102,10 @@ class GoRouterConfig {
         path: AppointmentConfirmedScreen.appointmentConfirmedRoute,
         builder: (context, state) =>
             AppointmentConfirmedScreen(doctor: state.extra as DoctorModel),
+      ),
+      GoRoute(
+        path: EditInformationScreen.editInformationRoute,
+        builder: (context, state) => EditInformationScreen(),
       ),
     ],
   );

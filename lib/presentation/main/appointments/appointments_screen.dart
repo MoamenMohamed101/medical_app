@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:medical_app/presentation/main/appointments/widgets/appointment_action_buttons.dart';
+import 'package:medical_app/presentation/widgets/appointment_action_buttons.dart';
 import 'package:medical_app/presentation/main/home/models/doctor_model.dart';
 import 'package:medical_app/presentation/main/home/widgets/doctor_card.dart';
 import 'package:medical_app/presentation/resources/color_manager.dart';

@@ -10,6 +10,7 @@ class AppointmentActionButtons extends StatelessWidget {
   final VoidCallback onFirstTap;
   final String? secondButtonText;
   final VoidCallback? onSecondTap;
+  final bool isReversed;
 
   const AppointmentActionButtons({
     super.key,
@@ -17,26 +18,25 @@ class AppointmentActionButtons extends StatelessWidget {
     required this.onFirstTap,
     this.secondButtonText,
     this.onSecondTap,
+    this.isReversed = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: ButtonWidget(
-            radius: AppSize.s8.r,
-            height: AppSize.s40.h,
-            text: firstButtonText,
-            color: ColorManager.primaryColor,
-            textColor: ColorManager.whiteColor,
-            onTap: onFirstTap,
-            isSmallButton: true,
-          ),
-        ),
-        if (secondButtonText != null) ...[
-          Gap(AppSize.s12.w),
-          Expanded(
+    final firstButton = Expanded(
+      child: ButtonWidget(
+        radius: AppSize.s8.r,
+        height: AppSize.s40.h,
+        text: firstButtonText,
+        color: ColorManager.primaryColor,
+        textColor: ColorManager.whiteColor,
+        onTap: onFirstTap,
+        isSmallButton: true,
+      ),
+    );
+
+    final secondButton = secondButtonText != null
+        ? Expanded(
             child: ButtonWidget(
               radius: AppSize.s8.r,
               height: AppSize.s40.h,
@@ -47,9 +47,19 @@ class AppointmentActionButtons extends StatelessWidget {
               onTap: onSecondTap,
               isSmallButton: true,
             ),
-          ),
-        ],
-      ],
+          )
+        : null;
+
+    return Row(
+      children: isReversed
+          ? [
+              if (secondButton != null) ...[secondButton, Gap(AppSize.s12.w)],
+              firstButton,
+            ]
+          : [
+              firstButton,
+              if (secondButton != null) ...[Gap(AppSize.s12.w), secondButton],
+            ],
     );
   }
 }
