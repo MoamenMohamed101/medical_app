@@ -19,7 +19,6 @@ import 'package:medical_app/presentation/resources/strings_manager.dart';
 import 'package:medical_app/presentation/resources/styles_manager.dart';
 import 'package:medical_app/presentation/resources/values_manager.dart';
 
-// Main home screen widget
 class HomeScreen extends StatelessWidget {
   static const String homeRoute = '/home';
 
@@ -182,7 +181,7 @@ class PopularDoctorsList extends StatelessWidget {
       image:
           'https://img.freepik.com/free-photo/portrait-successful-man-having-stubble-posing-with-broad-smile-keeping-arms-folded_171337-1267.jpg',
       specialty: 'Interventional Cardiologist',
-      rating: 4.8,
+      rating: 3,
       reviews: 120,
       availability: "Sunday : Thursday",
     ),
@@ -191,7 +190,7 @@ class PopularDoctorsList extends StatelessWidget {
       image:
           'https://img.freepik.com/free-photo/portrait-successful-man-having-stubble-posing-with-broad-smile-keeping-arms-folded_171337-1267.jpg',
       specialty: 'Interventional Cardiologist',
-      rating: 4.8,
+      rating: 4,
       reviews: 120,
       availability: "Sunday : Thursday",
     ),

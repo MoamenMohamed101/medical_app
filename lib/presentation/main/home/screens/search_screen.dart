@@ -145,11 +145,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   itemCount: doctors.length,
                   separatorBuilder: (context, index) => Gap(AppSize.s16.h),
                   itemBuilder: (context, index) {
-                    return DoctorCard(
-                      doctor: doctors[index],
-                      showPrice: true,
-                      width: double.infinity,
-                    );
+                    return DoctorCard(doctor: doctors[index], showPrice: true);
                   },
                 ),
               ),

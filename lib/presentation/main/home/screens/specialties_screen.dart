@@ -67,8 +67,8 @@ class SpecialtiesScreen extends StatelessWidget {
           itemBuilder: (context, index) {
             return SpecialtyItem(
               specialty: specialties[index],
-              iconHieght: AppSize.s80.h,
-              iconWidth: AppSize.s80.w,
+              iconHieght: AppSize.s60.h,
+              iconWidth: AppSize.s60.w,
               textStyle: getMediumTextStyle(
                 color: ColorManager.primaryColor,
                 fontSize: FontSizeManager.s16.sp,

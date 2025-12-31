@@ -84,11 +84,7 @@ class _SpecialScreenState extends State<SpecialScreen> {
                   itemCount: doctors.length,
                   separatorBuilder: (context, index) => Gap(AppSize.s12.h),
                   itemBuilder: (context, index) {
-                    return DoctorCard(
-                      doctor: doctors[index],
-                      showPrice: true,
-                      width: double.infinity,
-                    );
+                    return DoctorCard(doctor: doctors[index], showPrice: true);
                   },
                 ),
               ),

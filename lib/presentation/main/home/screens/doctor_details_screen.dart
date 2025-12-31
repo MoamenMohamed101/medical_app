@@ -22,18 +22,18 @@ class DoctorDetailsScreen extends StatefulWidget {
 }
 
 class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
-  int selectedDayIndex = 1; // "Thu 25 Des" selected in image
-  int selectedTimeIndex =
-      -1; // No time selection explicitly shown in image (just chips), let's say none or handle toggling
+  // int selectedDayIndex = 1; // "Thu 25 Des" selected in image
+  // int selectedTimeIndex =
+  //     -1; // No time selection explicitly shown in image (just chips), let's say none or handle toggling
 
-  final List<Map<String, String>> days = [
-    {'day': 'Today', 'date': '24 Des'},
-    {'day': 'Thu', 'date': '25 Des'}, // Selected
-    {'day': 'Sat', 'date': '27 Des'},
-    {'day': 'Sun', 'date': '29 Des'},
-  ];
+  // final List<Map<String, String>> days = [
+  //   {'day': 'Today', 'date': '24 Des'},
+  //   {'day': 'Thu', 'date': '25 Des'}, // Selected
+  //   {'day': 'Sat', 'date': '27 Des'},
+  //   {'day': 'Sun', 'date': '29 Des'},
+  // ];
 
-  final List<String> times = ['7:00 PM', '8:00 PM', '8:30 PM', '9:30 PM'];
+  // final List<String> times = ['7:00 PM', '8:00 PM', '8:30 PM', '9:30 PM'];
 
   @override
   Widget build(BuildContext context) {
@@ -59,14 +59,14 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
                     ),
                   ),
                   Gap(AppSize.s16.h),
-                  _buildSectionTitle('${Strings.day}:'), // Colon in image
-                  Gap(AppSize.s12.h),
-                  _buildDaySelector(),
-                  Gap(AppSize.s16.h),
-                  _buildSectionTitle('${Strings.time}:'), // Colon in image
-                  Gap(AppSize.s12.h),
-                  _buildTimeSelector(),
-                  Gap(AppSize.s16.h),
+                  // _buildSectionTitle('${Strings.day}:'), // Colon in image
+                  // Gap(AppSize.s12.h),
+                  // _buildDaySelector(),
+                  // Gap(AppSize.s16.h),
+                  // _buildSectionTitle('${Strings.time}:'), // Colon in image
+                  // Gap(AppSize.s12.h),
+                  // _buildTimeSelector(),
+                  // Gap(AppSize.s16.h),
                   _buildSectionTitle(Strings.reviews),
                   Gap(AppSize.s12.h),
                   _buildReviewsList(),
@@ -251,92 +251,92 @@ class _DoctorDetailsScreenState extends State<DoctorDetailsScreen> {
     );
   }
 
-  Widget _buildDaySelector() {
-    return SizedBox(
-      height: AppSize.s60.h,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: days.length,
-        separatorBuilder: (context, index) => Gap(AppSize.s12.w),
-        itemBuilder: (context, index) {
-          final isSelected = index == selectedDayIndex;
-          return GestureDetector(
-            onTap: () {
-              setState(() {
-                selectedDayIndex = index;
-              });
-            },
-            child: Container(
-              width: AppSize.s70.w,
-              decoration: BoxDecoration(
-                color: isSelected
-                    ? ColorManager.primaryColor.withValues(alpha: 0.15)
-                    : ColorManager.whiteColor,
-                borderRadius: BorderRadius.circular(AppSize.s12.r),
-                border: Border.all(
-                  color: isSelected
-                      ? Colors.transparent
-                      : ColorManager.lightGrey,
-                ),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    days[index]['day']!,
-                    style: getRegularTextStyle(
-                      color: isSelected
-                          ? ColorManager.primaryColor
-                          : ColorManager.greyColor,
-                      fontSize: FontSizeManager.s14.sp,
-                    ),
-                  ),
-                  Gap(AppSize.s4.h),
-                  Text(
-                    days[index]['date']!,
-                    style: getSemiBoldTextStyle(
-                      color: isSelected
-                          ? ColorManager.primaryColor
-                          : ColorManager.greyColor,
-                      fontSize: FontSizeManager.s14.sp,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
+  // Widget _buildDaySelector() {
+  //   return SizedBox(
+  //     height: AppSize.s60.h,
+  //     child: ListView.separated(
+  //       scrollDirection: Axis.horizontal,
+  //       itemCount: days.length,
+  //       separatorBuilder: (context, index) => Gap(AppSize.s12.w),
+  //       itemBuilder: (context, index) {
+  //         final isSelected = index == selectedDayIndex;
+  //         return GestureDetector(
+  //           onTap: () {
+  //             setState(() {
+  //               selectedDayIndex = index;
+  //             });
+  //           },
+  //           child: Container(
+  //             width: AppSize.s70.w,
+  //             decoration: BoxDecoration(
+  //               color: isSelected
+  //                   ? ColorManager.primaryColor.withValues(alpha: 0.15)
+  //                   : ColorManager.whiteColor,
+  //               borderRadius: BorderRadius.circular(AppSize.s12.r),
+  //               border: Border.all(
+  //                 color: isSelected
+  //                     ? Colors.transparent
+  //                     : ColorManager.lightGrey,
+  //               ),
+  //             ),
+  //             child: Column(
+  //               mainAxisAlignment: MainAxisAlignment.center,
+  //               children: [
+  //                 Text(
+  //                   days[index]['day']!,
+  //                   style: getRegularTextStyle(
+  //                     color: isSelected
+  //                         ? ColorManager.primaryColor
+  //                         : ColorManager.greyColor,
+  //                     fontSize: FontSizeManager.s14.sp,
+  //                   ),
+  //                 ),
+  //                 Gap(AppSize.s4.h),
+  //                 Text(
+  //                   days[index]['date']!,
+  //                   style: getSemiBoldTextStyle(
+  //                     color: isSelected
+  //                         ? ColorManager.primaryColor
+  //                         : ColorManager.greyColor,
+  //                     fontSize: FontSizeManager.s14.sp,
+  //                   ),
+  //                 ),
+  //               ],
+  //             ),
+  //           ),
+  //         );
+  //       },
+  //     ),
+  //   );
+  // }
 
-  Widget _buildTimeSelector() {
-    return SizedBox(
-      height: AppSize.s40.h,
-      child: ListView.separated(
-        scrollDirection: Axis.horizontal,
-        itemCount: times.length,
-        separatorBuilder: (context, index) => Gap(AppSize.s12.w),
-        itemBuilder: (context, index) {
-          return Container(
-            padding: EdgeInsets.symmetric(horizontal: AppPadding.p16.w),
-            alignment: Alignment.center,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(AppSize.s12.r),
-              border: Border.all(color: ColorManager.lightGrey),
-            ),
-            child: Text(
-              times[index],
-              style: getRegularTextStyle(
-                color: ColorManager.greyColor,
-                fontSize: FontSizeManager.s14.sp,
-              ),
-            ),
-          );
-        },
-      ),
-    );
-  }
+  // Widget _buildTimeSelector() {
+  //   return SizedBox(
+  //     height: AppSize.s40.h,
+  //     child: ListView.separated(
+  //       scrollDirection: Axis.horizontal,
+  //       itemCount: times.length,
+  //       separatorBuilder: (context, index) => Gap(AppSize.s12.w),
+  //       itemBuilder: (context, index) {
+  //         return Container(
+  //           padding: EdgeInsets.symmetric(horizontal: AppPadding.p16.w),
+  //           alignment: Alignment.center,
+  //           decoration: BoxDecoration(
+  //             borderRadius: BorderRadius.circular(AppSize.s12.r),
+  //             border: Border.all(color: ColorManager.lightGrey),
+  //           ),
+  //           child: Text(
+  //             times[index],
+  //             style: getRegularTextStyle(
+  //               color: ColorManager.greyColor,
+  //               fontSize: FontSizeManager.s14.sp,
+  //             ),
+  //           ),
+  //         );
+  //       },
+  //     ),
+  //   );
+  // }
 
   Widget _buildReviewsList() {
     return Column(
