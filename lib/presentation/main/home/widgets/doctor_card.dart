@@ -14,13 +14,25 @@ import 'package:medical_app/presentation/widgets/button_widget.dart';
 class DoctorCard extends StatelessWidget {
   final DoctorModel doctor;
   final bool showPrice;
+  final Widget? bottomWidget;
+  final Widget? headerTrailing;
+  final Color? priceColor;
+  final double? width;
 
-  const DoctorCard({super.key, required this.doctor, this.showPrice = false});
+  const DoctorCard({
+    super.key,
+    required this.doctor,
+    this.showPrice = false,
+    this.bottomWidget,
+    this.headerTrailing,
+    this.priceColor,
+    this.width,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width * 0.75,
+      width: width ?? MediaQuery.of(context).size.width * 0.75,
       padding: EdgeInsets.all(AppPadding.p10.w),
       decoration: BoxDecoration(
         color: ColorManager.babyBlue.withValues(alpha: 0.03),
@@ -29,9 +41,14 @@ class DoctorCard extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          _DoctorHeaderSection(doctor: doctor, showPrice: showPrice),
+          _DoctorHeaderSection(
+            doctor: doctor,
+            showPrice: showPrice,
+            priceColor: priceColor,
+            headerTrailing: headerTrailing,
+          ),
           Gap(AppSize.s8.h),
-          _DoctorFooterSection(doctor: doctor),
+          bottomWidget ?? _DoctorFooterSection(doctor: doctor),
         ],
       ),
     );
@@ -41,17 +58,28 @@ class DoctorCard extends StatelessWidget {
 class _DoctorHeaderSection extends StatelessWidget {
   final DoctorModel doctor;
   final bool showPrice;
+  final Color? priceColor;
+  final Widget? headerTrailing;
 
-  const _DoctorHeaderSection({required this.doctor, required this.showPrice});
+  const _DoctorHeaderSection({
+    required this.doctor,
+    required this.showPrice,
+    this.priceColor,
+    this.headerTrailing,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _DoctorAvatar(imageUrl: doctor.image),
         Gap(AppSize.s8.w),
         Expanded(child: _DoctorInfo(doctor: doctor)),
-        if (showPrice) _DoctorPrice(price: doctor.price),
+        if (headerTrailing != null)
+          headerTrailing!
+        else if (showPrice)
+          _DoctorPrice(price: doctor.price, priceColor: priceColor),
       ],
     );
   }
@@ -148,15 +176,16 @@ class _DoctorRating extends StatelessWidget {
 
 class _DoctorPrice extends StatelessWidget {
   final double price;
+  final Color? priceColor;
 
-  const _DoctorPrice({required this.price});
+  const _DoctorPrice({required this.price, this.priceColor});
 
   @override
   Widget build(BuildContext context) {
     return Text(
       '\$${price.toInt()}',
       style: getBoldTextStyle(
-        color: ColorManager.primaryColor,
+        color: priceColor ?? ColorManager.primaryColor,
         fontSize: FontSizeManager.s18.sp,
       ),
     );

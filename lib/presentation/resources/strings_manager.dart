@@ -27,7 +27,7 @@ class Strings {
   static const String confirm = "Confirm";
   static const String home = "Home";
   static const String appointments = "Appointments";
-  static const String chat = "Chat";
+  static const String saved = "Saved";
   static const String profile = "Profile";
   static const String specialties = "Specialties";
   static const String seeAll = "See All";
@@ -71,4 +71,18 @@ class Strings {
       "Microphone permission denied";
   static const String speechRecognitionNotAvailable =
       "Speech recognition not available";
+  static const String upcoming = "Upcoming";
+  static const String completed = "Completed";
+  static const String canceled = "Canceled";
+  static const String details = "Details";
+  static const String reBook = "Re-book";
+  static const String addReview = "Add Review";
+  static const String myProfile = "My Profile";
+  static const String paymentMethod = "Payment Method";
+  static const String notificationSetting = "Notification Setting";
+  static const String passwordManager = "Password Manager";
+  static const String privacyPolicy = "Privacy Policy";
+  static const String helpCenter = "Help Center";
+  static const String deleteAccount = "Delete Account";
+  static const String logout = "Logout";
 }

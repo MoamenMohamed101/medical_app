@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:medical_app/presentation/main/appointments/appointments_screen.dart';
-import 'package:medical_app/presentation/main/chat/chat_screen.dart';
+import 'package:medical_app/presentation/main/chat/saved_screen.dart';
 import 'package:medical_app/presentation/main/home/home_screen.dart';
 import 'package:medical_app/presentation/main/profile/profile_screen.dart';
 import 'package:medical_app/presentation/resources/assets_manager.dart';
@@ -21,7 +21,7 @@ class _MainScreenState extends State<MainScreen> {
   late final List<Widget> _pages = [
     HomeScreen(),
     AppointmentsScreen(),
-    ChatScreen(),
+    SavedScreen(),
     ProfileScreen(),
   ];
 
@@ -80,7 +80,7 @@ class _MainScreenState extends State<MainScreen> {
             ),
             BottomNavigationBarItem(
               icon: SvgPicture.asset(
-                ImageAssets.chat,
+                ImageAssets.saved,
                 colorFilter: ColorFilter.mode(
                   _currentIndex == 2
                       ? ColorManager.primaryColor
@@ -88,7 +88,7 @@ class _MainScreenState extends State<MainScreen> {
                   BlendMode.srcIn,
                 ),
               ),
-              label: Strings.chat,
+              label: Strings.saved,
             ),
             BottomNavigationBarItem(
               icon: SvgPicture.asset(

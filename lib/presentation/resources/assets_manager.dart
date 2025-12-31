@@ -13,6 +13,7 @@ class ImageAssets {
   static const String appointments = '$imagesPath/appointments.svg';
   static const String profile = '$imagesPath/profile.svg';
   static const String chat = '$imagesPath/chat.svg';
+  static const String saved = '$imagesPath/saved.svg';
   static const String neurosurgery = '$imagesPath/neurosurgery.svg';
   static const String ophthalmology = '$imagesPath/ophthalmology.svg';
   static const String internalMedicine = '$imagesPath/internal_medicine.svg';
