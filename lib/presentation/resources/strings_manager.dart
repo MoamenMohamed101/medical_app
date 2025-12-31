@@ -65,4 +65,10 @@ class Strings {
   static const String cancel = "Cancel";
   static const String backToHome = "Back to Home";
   static const String hi = "Hi";
+  static const String trySaying = "Try Saying...";
+  static const String all = "All";
+  static const String microphonePermissionDenied =
+      "Microphone permission denied";
+  static const String speechRecognitionNotAvailable =
+      "Speech recognition not available";
 }

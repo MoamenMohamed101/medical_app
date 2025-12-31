@@ -45,5 +45,10 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	// Add this to enable voice search
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>We need speech recognition to search for doctors by voice.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>We need microphone access to record your voice for search.</string>
 </dict>
 </plist>

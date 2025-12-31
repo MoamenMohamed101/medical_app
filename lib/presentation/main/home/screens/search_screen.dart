@@ -22,10 +22,8 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  final TextEditingController _searchController = TextEditingController(
-    text: "Dr Daniel",
-  );
-  String _selectedFilter = 'All';
+  final TextEditingController _searchController = TextEditingController();
+  String _selectedFilter = Strings.all;
 
   final List<SpecialtyModel> specialties = [
     SpecialtyModel(name: Strings.cardiology, iconPath: ImageAssets.cardiology),
