@@ -20,7 +20,7 @@ class PasswordField extends StatelessWidget {
       obscureText: true,
       keyboardType: TextInputType.visiblePassword,
       textInputAction: TextInputAction.done,
-      prefixIcon: Icon(Icons.lock, color: ColorManager.primaryColor),
+      prefixIcon: Icon(Icons.lock),
       suffixIcon: IconButton(
         onPressed: () {},
         icon: Icon(Icons.remove_red_eye, color: ColorManager.darkGrayColor),

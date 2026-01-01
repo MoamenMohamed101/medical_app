@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'package:go_router/go_router.dart';
 import 'package:medical_app/presentation/resources/color_manager.dart';
 import 'package:medical_app/presentation/resources/font_manager.dart';
 import 'package:medical_app/presentation/resources/strings_manager.dart';
 import 'package:medical_app/presentation/resources/styles_manager.dart';
 import 'package:medical_app/presentation/widgets/custom_app_bar.dart';
+import 'package:medical_app/presentation/widgets/date_picker_widget.dart';
 import 'package:medical_app/presentation/widgets/email_field_widget.dart';
 import 'package:medical_app/presentation/widgets/phone_field_widget.dart';
 import 'package:medical_app/presentation/widgets/text_form_field_widget.dart';
 import 'package:medical_app/presentation/widgets/button_widget.dart';
 import 'package:medical_app/presentation/resources/values_manager.dart';
-import 'package:medical_app/presentation/widgets/appointment_action_buttons.dart';
 
 class EditInformationScreen extends StatefulWidget {
   static const String editInformationRoute = '/edit-information';
@@ -43,10 +41,7 @@ class _EditInformationScreenState extends State<EditInformationScreen> {
             TextFromFieldWidget(
               hintText: Strings.patientName,
               controller: _nameController,
-              prefixIcon: const Icon(
-                Icons.person_outline,
-                color: ColorManager.textColor,
-              ),
+              prefixIcon: const Icon(Icons.person_outline),
             ),
             Gap(AppSize.s16.h),
             PhoneField(phoneController: _phoneController),
@@ -99,7 +94,14 @@ class _EditInformationScreenState extends State<EditInformationScreen> {
 
   Widget _buildDatePicker(BuildContext context) {
     return GestureDetector(
-      onTap: () => _showDatePicker(context),
+      onTap: () => DatePickerBottomSheet.show(
+        context: context,
+        onDateSelected: (selectedDate) {
+          setState(() {
+            _selectedDate = selectedDate;
+          });
+        },
+      ),
       child: Container(
         padding: EdgeInsets.symmetric(
           horizontal: AppPadding.p14.w,
@@ -107,11 +109,11 @@ class _EditInformationScreenState extends State<EditInformationScreen> {
         ),
         decoration: BoxDecoration(
           color: ColorManager.whiteColor,
-          borderRadius: BorderRadius.circular(AppSize.s22.r),
+          borderRadius: BorderRadius.circular(AppSize.s14.r),
           border: Border.all(color: ColorManager.formFieldsBorderColor),
           boxShadow: [
             BoxShadow(
-              color: ColorManager.blackColor.withOpacity(0.05),
+              color: ColorManager.blackColor.withValues(alpha: 0.05),
               blurRadius: 10,
               offset: const Offset(0, 5),
             ),
@@ -124,65 +126,14 @@ class _EditInformationScreenState extends State<EditInformationScreen> {
             Text(
               // Simple formatting for demo, ideally use intl
               "${_selectedDate.day} / ${_selectedDate.month} / ${_selectedDate.year}",
-              style: getRegularTextStyle(color: ColorManager.textColor),
+              style: getRegularTextStyle(
+                color: ColorManager.textColor,
+                fontSize: FontSizeManager.s16.sp,
+              ),
             ),
           ],
         ),
       ),
-    );
-  }
-
-  void _showDatePicker(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: ColorManager.whiteColor,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(AppSize.s20.r),
-          topRight: Radius.circular(AppSize.s20.r),
-        ),
-      ),
-      builder: (context) {
-        return Container(
-          height: 350.h,
-          padding: EdgeInsets.all(AppPadding.p16.w),
-          child: Column(
-            children: [
-              Text(
-                "${_selectedDate.year}-${_selectedDate.month}-${_selectedDate.day}",
-                style: getMediumTextStyle(
-                  color: ColorManager.textColor,
-                  fontSize: FontSizeManager.s18.sp,
-                ),
-              ),
-              Gap(AppSize.s10.h),
-              Divider(),
-              Expanded(
-                child: CupertinoDatePicker(
-                  mode: CupertinoDatePickerMode.date,
-                  initialDateTime: _selectedDate,
-                  onDateTimeChanged: (date) {
-                    setState(() {
-                      _selectedDate = date;
-                    });
-                  },
-                ),
-              ),
-              Gap(AppSize.s16.h),
-              AppointmentActionButtons(
-                firstButtonText: Strings.selected,
-                onFirstTap: () {
-                  context.pop();
-                  setState(() {}); // refresh main UI
-                },
-                secondButtonText: Strings.cancel,
-                onSecondTap: () => context.pop(),
-                isReversed: true, // Matches [Cancel] [Selected] design
-              ),
-            ],
-          ),
-        );
-      },
     );
   }
 }

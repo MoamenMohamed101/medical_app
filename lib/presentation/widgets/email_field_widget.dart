@@ -17,7 +17,7 @@ class EmailField extends StatelessWidget {
         TextFromFieldWidget(
           hintText: Strings.email.tr(),
           controller: emailController,
-          prefixIcon: Icon(Icons.email, color: ColorManager.primaryColor),
+          prefixIcon: Icon(Icons.email),
         ),
       ],
     );

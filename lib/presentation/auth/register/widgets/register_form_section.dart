@@ -9,12 +9,14 @@ import 'package:medical_app/presentation/resources/values_manager.dart';
 import 'package:medical_app/presentation/widgets/button_widget.dart';
 import 'package:medical_app/presentation/widgets/email_field_widget.dart';
 import 'package:medical_app/presentation/widgets/password_field.dart';
+import 'package:medical_app/presentation/widgets/phone_field_widget.dart';
 import 'package:medical_app/presentation/widgets/text_button_widget.dart';
 
 class RegisterFormSection extends StatefulWidget {
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final TextEditingController confirmPasswordController;
+  final TextEditingController phoneController;
   final VoidCallback onSignUp;
 
   const RegisterFormSection({
@@ -22,6 +24,7 @@ class RegisterFormSection extends StatefulWidget {
     required this.emailController,
     required this.passwordController,
     required this.confirmPasswordController,
+    required this.phoneController,
     required this.onSignUp,
   });
 
@@ -44,6 +47,8 @@ class _RegisterFormSectionState extends State<RegisterFormSection> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         EmailField(emailController: widget.emailController),
+        Gap(AppSize.s25.h),
+        PhoneField(phoneController: widget.phoneController),
         Gap(AppSize.s25.h),
         PasswordField(
           passwordController: widget.passwordController,

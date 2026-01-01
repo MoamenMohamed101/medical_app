@@ -89,4 +89,5 @@ class Strings {
   static const String updateProfile = "Update Profile";
   static const String selectDate = "Select Date";
   static const String selected = "Selected";
+  static const String changeLanguage = "Change Language";
 }

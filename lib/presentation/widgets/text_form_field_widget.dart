@@ -61,8 +61,8 @@ class TextFromFieldWidget extends StatelessWidget {
         obscureText: obscureText,
         keyboardType: isNotes ? TextInputType.multiline : keyboardType,
         textInputAction: isNotes ? TextInputAction.newline : textInputAction,
-        style: getMediumTextStyle(
-          color: ColorManager.primaryColor,
+        style: getRegularTextStyle(
+          color: ColorManager.textColor,
           fontSize: FontSizeManager.s16.sp,
         ),
         enabled: enabled,
@@ -78,7 +78,8 @@ class TextFromFieldWidget extends StatelessWidget {
           // ),
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
-
+          // suffixIconColor: ColorManager.errorColor,
+          prefixIconColor: ColorManager.textColor,
           contentPadding: EdgeInsets.symmetric(
             vertical: AppPadding.p18.h,
             horizontal: AppPadding.p12.w,
@@ -89,7 +90,7 @@ class TextFromFieldWidget extends StatelessWidget {
           fillColor: ColorManager.whiteColor,
           hintStyle: getRegularTextStyle(
             color: ColorManager.greyColor,
-            fontSize: AppSize.s16.sp,
+            fontSize: FontSizeManager.s16.sp,
           ),
 
           enabledBorder: OutlineInputBorder(

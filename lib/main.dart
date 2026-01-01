@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:medical_app/app/app.dart';
 import 'package:device_preview/device_preview.dart';
 
-void main() => runApp(
-  DevicePreview(enabled: !kReleaseMode, builder: (context) => MyApp()),
-);
+// void main() => runApp(
+//   DevicePreview(enabled: !kReleaseMode, builder: (context) => MyApp()),
+// );
 
-// void main() => runApp(MyApp());
+void main() => runApp(MyApp());

@@ -16,6 +16,7 @@ class RegisterScreen extends StatelessWidget {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
+  final TextEditingController phoneController = TextEditingController();
 
   RegisterScreen({super.key});
 
@@ -54,6 +55,7 @@ class RegisterScreen extends StatelessWidget {
                   emailController: emailController,
                   passwordController: passwordController,
                   confirmPasswordController: confirmPasswordController,
+                  phoneController: phoneController,
                 ),
                 Gap(AppSize.s40.h),
                 SocialSignUpSection(

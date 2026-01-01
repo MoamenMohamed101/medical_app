@@ -17,10 +17,7 @@ class PhoneField extends StatelessWidget {
         TextFromFieldWidget(
           hintText: Strings.phoneNumber.tr(),
           controller: phoneController,
-          prefixIcon: Icon(
-            Icons.phone_outlined,
-            color: ColorManager.primaryColor,
-          ),
+          prefixIcon: Icon(Icons.phone_outlined),
           keyboardType: TextInputType.phone,
         ),
       ],

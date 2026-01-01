@@ -18,18 +18,16 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorManager.whiteColor,
-      appBar: const CustomAppBar(title: Strings.myProfile),
+      appBar: const CustomAppBar(title: Strings.myProfile, showBack: false),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(AppPadding.p16.w),
         child: Column(
           children: [
             _buildProfileHeader(context),
             Gap(AppSize.s30.h),
-            _buildMenuItem(title: Strings.paymentMethod),
-            _buildMenuItem(title: Strings.notificationSetting),
-            _buildMenuItem(title: Strings.passwordManager),
             _buildMenuItem(title: Strings.privacyPolicy),
             _buildMenuItem(title: Strings.helpCenter),
+            _buildMenuItem(title: Strings.changeLanguage),
             _buildMenuItem(title: Strings.deleteAccount),
             _buildMenuItem(title: Strings.logout),
           ],
