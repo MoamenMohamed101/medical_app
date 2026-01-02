@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:medical_app/presentation/main/home/screens/notifications_screen.dart';
+import 'package:medical_app/presentation/main/home/screens/search_screen.dart';
 import 'package:medical_app/presentation/resources/assets_manager.dart';
 import 'package:medical_app/presentation/resources/color_manager.dart';
 import 'package:medical_app/presentation/resources/font_manager.dart';
@@ -49,11 +50,13 @@ class HomeAppBar extends StatelessWidget {
           ],
         ),
         InkWell(
-          onTap: () => context.push(NotificationsScreen.notificationRoute),
+          // onTap: () => context.push(NotificationsScreen.notificationRoute),
+          onTap: () => context.push(SearchScreen.searchRoute),
           child: CircleAvatar(
             radius: AppSize.s20.r,
             backgroundColor: ColorManager.babyBlue.withValues(alpha: 0.03),
-            child: SvgPicture.asset(ImageAssets.notification),
+            // child: SvgPicture.asset(ImageAssets.notification),
+            child: Icon(Icons.search, color: ColorManager.primaryColor),
           ),
         ),
       ],

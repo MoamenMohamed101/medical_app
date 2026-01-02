@@ -58,7 +58,7 @@ class SocialSignUpSection extends StatelessWidget {
         ),
         Gap(AppSize.s30.w),
         SocialSignInButton(
-          iconAsset: ImageAssets.facebook,
+          iconAsset: ImageAssets.facebookLogo,
           onTap: onFacebookSignIn,
         ),
       ],

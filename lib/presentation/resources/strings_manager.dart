@@ -101,4 +101,7 @@ class Strings {
   static const String yesLogout = "Yes, Logout";
   static const String lastUpdate = "Last Update: 14/08/2024";
   static const String termsAndConditions = "Terms & Conditions";
+  static const String contactUs = 'Contact Us';
+  static const String hospitalPhone = '+0127 049 2019';
+  static const String hospitalEmail = 'moamen@gmail.com';
 }

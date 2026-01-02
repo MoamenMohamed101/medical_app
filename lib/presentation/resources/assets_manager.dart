@@ -1,10 +1,9 @@
 const String imagesPath = 'assets/images';
-const String iconsPath = 'assets/icons';
 const String jsonPath = 'assets/json';
 
 class ImageAssets {
   static const String splash = '$imagesPath/splash_logo.svg';
-  static const String facebook = '$imagesPath/facebook_logo.svg';
+  static const String facebookLogo = '$imagesPath/facebook_logo.svg';
   static const String google = '$imagesPath/google_logo.svg';
   static const String forgetPassword = '$imagesPath/forget_password_sms.svg';
   static const String verify = '$imagesPath/verification.svg';
@@ -24,8 +23,10 @@ class ImageAssets {
   static const String phone = '$imagesPath/phone.svg';
   static const String pediatrics = '$imagesPath/pediatrics.svg';
   static const String orthopedics = '$imagesPath/orthopedics.svg';
+  static const String call = '$imagesPath/call.svg';
+  static const String email = '$imagesPath/email.svg';
+  static const String instagram = '$imagesPath/instagram.svg';
+  static const String facebook = '$imagesPath/facebook.svg';
+  static const String tiktok = '$imagesPath/tiktok.svg';
+  static const String web = '$imagesPath/web.png';
 }
-
-class IconAssets {}
-
-class JsonAssets {}

@@ -40,7 +40,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             _buildMenuItem(
               title: Strings.helpCenter,
-              onTap: () => context.push(HelpCenterScreen.helpCenterRoute),
+              onTap: () => context.push(HelpScreen.helpRoute),
             ),
             _buildMenuItem(
               title: Strings.changeLanguage,

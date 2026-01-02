@@ -38,13 +38,13 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Gap(AppSize.s10.h),
                 const HomeAppBar(),
-                Gap(AppSize.s16.h),
-                HomeSearchBar(
-                  onTap: () {
-                    context.push(SearchScreen.searchRoute);
-                  },
-                  readOnly: true,
-                ),
+                // Gap(AppSize.s16.h),
+                // HomeSearchBar(
+                //   onTap: () {
+                //     context.push(SearchScreen.searchRoute);
+                //   },
+                //   readOnly: true,
+                // ),
                 Gap(AppSize.s16.h),
                 const HomeAppointmentCard(),
                 Gap(AppSize.s16.h),

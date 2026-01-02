@@ -115,8 +115,8 @@ class GoRouterConfig {
         builder: (context, state) => const PrivacyPolicyScreen(),
       ),
       GoRoute(
-        path: HelpCenterScreen.helpCenterRoute,
-        builder: (context, state) => const HelpCenterScreen(),
+        path: HelpScreen.helpRoute,
+        builder: (context, state) => const HelpScreen(),
       ),
       GoRoute(
         path: PasswordManagerScreen.passwordManagerRoute,
