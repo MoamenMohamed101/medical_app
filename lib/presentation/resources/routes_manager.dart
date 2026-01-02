@@ -18,6 +18,9 @@ import 'package:medical_app/presentation/main/home/screens/appointment_confirmed
 import 'package:medical_app/presentation/main/main_screen.dart';
 import 'package:medical_app/presentation/main/profile/profile_screen.dart';
 import 'package:medical_app/presentation/main/profile/screens/edit_information_screen.dart';
+import 'package:medical_app/presentation/main/profile/screens/help_center_screen.dart';
+import 'package:medical_app/presentation/main/profile/screens/password_manager_screen.dart';
+import 'package:medical_app/presentation/main/profile/screens/privacy_policy_screen.dart';
 import 'package:medical_app/presentation/reset_password/reset_password_screen.dart';
 import 'package:medical_app/presentation/verify/verify_screen.dart';
 import 'package:medical_app/presentation/splash_screen.dart';
@@ -106,6 +109,18 @@ class GoRouterConfig {
       GoRoute(
         path: EditInformationScreen.editInformationRoute,
         builder: (context, state) => EditInformationScreen(),
+      ),
+      GoRoute(
+        path: PrivacyPolicyScreen.privacyPolicyRoute,
+        builder: (context, state) => const PrivacyPolicyScreen(),
+      ),
+      GoRoute(
+        path: HelpCenterScreen.helpCenterRoute,
+        builder: (context, state) => const HelpCenterScreen(),
+      ),
+      GoRoute(
+        path: PasswordManagerScreen.passwordManagerRoute,
+        builder: (context, state) => const PasswordManagerScreen(),
       ),
     ],
   );

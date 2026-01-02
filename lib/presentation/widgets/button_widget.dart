@@ -47,7 +47,7 @@ class ButtonWidget extends StatelessWidget {
             style: isSmallButton
                 ? getRegularTextStyle(
                     color: textColor,
-                    fontSize: AppSize.s12.sp,
+                    fontSize: AppSize.s16.sp,
                   )
                 : getMediumTextStyle(
                     color: textColor,

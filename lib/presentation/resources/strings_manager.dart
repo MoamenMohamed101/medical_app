@@ -90,4 +90,15 @@ class Strings {
   static const String selectDate = "Select Date";
   static const String selected = "Selected";
   static const String changeLanguage = "Change Language";
+  static const String areYouSureDeleteAccount =
+      "Are you sure you want to delete account?";
+  static const String yesDelete = "Yes, Delete";
+  static const String currentPassword = "Current Password";
+  static const String newPassword = "New Password";
+  static const String confirmNewPassword = "Confirm New Password";
+  static const String changePassword = "Change Password";
+  static const String areYouSureLogout = "Are you sure you want to logout?";
+  static const String yesLogout = "Yes, Logout";
+  static const String lastUpdate = "Last Update: 14/08/2024";
+  static const String termsAndConditions = "Terms & Conditions";
 }

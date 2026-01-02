@@ -5,11 +5,13 @@ import 'package:flutter/material.dart';
 class PasswordField extends StatelessWidget {
   final TextEditingController passwordController;
   final String hintText;
+  final bool showLockIcon;
 
   const PasswordField({
     super.key,
     required this.passwordController,
     required this.hintText,
+    this.showLockIcon = true,
   });
 
   @override
@@ -20,10 +22,13 @@ class PasswordField extends StatelessWidget {
       obscureText: true,
       keyboardType: TextInputType.visiblePassword,
       textInputAction: TextInputAction.done,
-      prefixIcon: Icon(Icons.lock),
+      prefixIcon: showLockIcon ? const Icon(Icons.lock) : null,
       suffixIcon: IconButton(
         onPressed: () {},
-        icon: Icon(Icons.remove_red_eye, color: ColorManager.darkGrayColor),
+        icon: const Icon(
+          Icons.remove_red_eye,
+          color: ColorManager.darkGrayColor,
+        ),
       ),
 
       // errorText: (snapshot.data ?? true)
