@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
-import 'package:medical_app/presentation/main/home/screens/notifications_screen.dart';
 import 'package:medical_app/presentation/main/home/screens/search_screen.dart';
-import 'package:medical_app/presentation/resources/assets_manager.dart';
 import 'package:medical_app/presentation/resources/color_manager.dart';
 import 'package:medical_app/presentation/resources/font_manager.dart';
 import 'package:medical_app/presentation/resources/strings_manager.dart';
