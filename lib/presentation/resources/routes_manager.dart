@@ -5,6 +5,7 @@ import 'package:medical_app/presentation/auth/login/login_screen.dart';
 import 'package:medical_app/presentation/auth/register/register_screen.dart';
 import 'package:medical_app/presentation/forgot_password/forget_password_screen.dart';
 import 'package:medical_app/presentation/main/appointments/appointments_screen.dart';
+import 'package:medical_app/presentation/main/appointments/review_screen.dart';
 import 'package:medical_app/presentation/main/chat/saved_screen.dart';
 import 'package:medical_app/presentation/main/home/home_screen.dart';
 import 'package:medical_app/presentation/main/home/screens/notifications_screen.dart';
@@ -121,6 +122,11 @@ class GoRouterConfig {
       GoRoute(
         path: PasswordManagerScreen.passwordManagerRoute,
         builder: (context, state) => const PasswordManagerScreen(),
+      ),
+      GoRoute(
+        path: ReviewScreen.reviewRoute,
+        builder: (context, state) =>
+            ReviewScreen(doctor: state.extra as DoctorModel),
       ),
     ],
   );

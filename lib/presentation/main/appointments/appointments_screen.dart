@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:medical_app/presentation/main/appointments/review_screen.dart';
 import 'package:medical_app/presentation/widgets/appointment_action_buttons.dart';
 import 'package:medical_app/presentation/main/home/models/doctor_model.dart';
 import 'package:medical_app/presentation/main/home/widgets/doctor_card.dart';
@@ -171,13 +173,13 @@ class _AppointmentsList extends StatelessWidget {
           doctor: doctors[index],
           showPrice: true,
           priceColor: ColorManager.textColor,
-          bottomWidget: _buildActions(context),
+          bottomWidget: _buildActions(context, doctors[index]),
         );
       },
     );
   }
 
-  Widget _buildActions(BuildContext context) {
+  Widget _buildActions(BuildContext context, DoctorModel doctor) {
     switch (actionType) {
       case ActionType.upcoming:
         return AppointmentActionButtons(
@@ -198,7 +200,7 @@ class _AppointmentsList extends StatelessWidget {
           },
           secondButtonText: Strings.addReview,
           onSecondTap: () {
-            // Handle review
+            context.push(ReviewScreen.reviewRoute, extra: doctor);
           },
         );
       case ActionType.canceled:

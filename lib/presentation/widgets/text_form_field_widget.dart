@@ -22,6 +22,9 @@ class TextFromFieldWidget extends StatelessWidget {
   final bool isNotes;
   final String? errorText;
   final bool readOnly;
+  final int? maxLines;
+  final int? minLines;
+  final Color? fillColor;
 
   const TextFromFieldWidget({
     super.key,
@@ -41,18 +44,20 @@ class TextFromFieldWidget extends StatelessWidget {
     this.isNotes = false,
     this.errorText,
     this.readOnly = false,
+    this.maxLines,
+    this.minLines,
+    this.fillColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       child: TextFormField(
-        textDirection: TextDirection.ltr,
         readOnly: readOnly,
         textAlign: centerText ? TextAlign.center : TextAlign.start,
-        maxLines: isNotes ? 5 : 1,
-        minLines: isNotes ? 5 : 1,
-        textAlignVertical: isNotes
+        maxLines: maxLines ?? (isNotes ? 5 : 1),
+        minLines: minLines ?? (isNotes ? 5 : 1),
+        textAlignVertical: (isNotes || (maxLines != null && maxLines! > 1))
             ? TextAlignVertical.top
             : TextAlignVertical.center,
         controller: controller,
@@ -87,7 +92,7 @@ class TextFromFieldWidget extends StatelessWidget {
 
           hintText: hintText,
           filled: true,
-          fillColor: ColorManager.whiteColor,
+          fillColor: fillColor ?? ColorManager.whiteColor,
           hintStyle: getRegularTextStyle(
             color: ColorManager.greyColor,
             fontSize: FontSizeManager.s16.sp,

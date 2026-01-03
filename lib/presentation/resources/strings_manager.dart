@@ -104,4 +104,5 @@ class Strings {
   static const String contactUs = 'Contact Us';
   static const String hospitalPhone = '+0127 049 2019';
   static const String hospitalEmail = 'moamen@gmail.com';
+  static const String enterYourComment = "Enter Your Comment Here...";
 }
